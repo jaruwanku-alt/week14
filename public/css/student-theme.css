@@ -1,0 +1,190 @@
+/* theme-signature: jaruwan-midnight-tech */
+:root {
+    --student-primary: #2dd4bf;
+    --student-accent: #818cf8;
+    --student-bg: #050914;
+    --student-surface: #0c1424;
+    --student-surface-alt: #111d32;
+    --student-text: #dbeafe;
+    --student-muted: #86a6c8;
+    --student-border: #213452;
+    --student-danger: #fb7185;
+    --student-font: "Segoe UI", "Noto Sans Thai", sans-serif;
+    --student-heading-font: "Bahnschrift", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--student-bg); }
+body,
+body.bg-light {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--student-text) !important;
+    background:
+        linear-gradient(rgb(45 212 191 / .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(45 212 191 / .035) 1px, transparent 1px),
+        radial-gradient(circle at 90% 0, #172554 0, #080e1c 36%, #050914 72%) !important;
+    background-size: 32px 32px, 32px 32px, auto !important;
+    font-family: var(--student-font) !important;
+    line-height: 1.65;
+}
+body::after {
+    content: "SYSTEM / LEARNING WORKSPACE";
+    position: fixed;
+    right: 1.25rem;
+    bottom: .8rem;
+    z-index: 0;
+    color: rgb(134 166 200 / .35);
+    font: 700 .65rem/1 var(--student-heading-font);
+    letter-spacing: .18em;
+    pointer-events: none;
+}
+
+/* Desktop command-deck navigation: a vertical rail plus a compact top edge. */
+.navbar,
+.navbar.bg-dark,
+.navbar.bg-white {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1030;
+    width: 17rem;
+    min-height: 100vh;
+    padding: 1.3rem 1rem;
+    align-items: flex-start;
+    color: var(--student-text) !important;
+    background: rgb(7 13 25 / .96) !important;
+    border: 0 !important;
+    border-right: 1px solid #2dd4bf55 !important;
+    box-shadow: 18px 0 50px rgb(0 0 0 / .3) !important;
+    backdrop-filter: blur(18px);
+}
+.navbar::before {
+    content: "JARUWAN // DEV CONSOLE";
+    position: absolute;
+    top: .55rem;
+    left: 1.15rem;
+    color: var(--student-primary);
+    font: 700 .62rem/1 var(--student-heading-font);
+    letter-spacing: .14em;
+}
+.navbar > .container,
+.navbar > .container-fluid {
+    width: 100%;
+    margin: 1.2rem 0 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+}
+.navbar-brand {
+    display: block;
+    margin: 0 0 1rem !important;
+    padding: 1rem .75rem !important;
+    color: #f0fdfa !important;
+    border-bottom: 1px solid var(--student-border);
+    font: 800 1.06rem/1.35 var(--student-heading-font) !important;
+    letter-spacing: .03em;
+    white-space: normal;
+}
+.navbar-brand::before { content: "[01] "; color: var(--student-primary); }
+.navbar-toggler { border-color: var(--student-border) !important; }
+.navbar-collapse { width: 100%; flex-direction: column; align-items: stretch !important; }
+.navbar-nav { width: 100%; flex-direction: column !important; gap: .25rem; }
+.navbar-nav.ms-auto { margin: .9rem 0 0 !important; padding-top: .8rem; border-top: 1px solid var(--student-border); }
+.navbar .nav-link {
+    padding: .6rem .75rem !important;
+    color: var(--student-muted) !important;
+    border-left: 2px solid transparent;
+    border-radius: 0 .45rem .45rem 0;
+    font-size: .91rem;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #f0fdfa !important;
+    background: linear-gradient(90deg, rgb(45 212 191 / .14), transparent);
+    border-left-color: var(--student-primary);
+}
+.dropdown-menu { color: var(--student-text); background: #0b1322; border: 1px solid var(--student-border); }
+.dropdown-item { color: var(--student-muted); }
+.dropdown-item:hover { color: #fff; background: var(--student-surface-alt); }
+
+#app > main,
+body > main.container {
+    position: relative;
+    z-index: 1;
+    margin-left: 17rem !important;
+    width: calc(100% - 17rem) !important;
+    max-width: none !important;
+    padding: 3rem clamp(1.25rem, 4vw, 4.5rem) !important;
+}
+#app > main > .container { max-width: 1180px; }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ecfeff !important;
+    font-family: var(--student-heading-font) !important;
+    letter-spacing: .015em;
+}
+h1::after, h2::after {
+    content: "_";
+    color: var(--student-primary);
+}
+a { color: #5eead4; }
+a:hover { color: #a5f3fc; }
+.hero,
+.bg-white,
+.bg-light {
+    position: relative;
+    overflow: hidden;
+    color: var(--student-text) !important;
+    background: linear-gradient(145deg, rgb(17 29 50 / .98), rgb(9 17 31 / .98)) !important;
+    border: 1px solid var(--student-border) !important;
+    border-radius: .75rem !important;
+    box-shadow: 0 22px 60px rgb(0 0 0 / .3) !important;
+}
+.hero::before,
+.bg-white::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(var(--student-primary), var(--student-accent));
+}
+.card,
+article {
+    color: var(--student-text) !important;
+    background: rgb(12 20 36 / .94) !important;
+    border: 1px solid var(--student-border) !important;
+    border-radius: .65rem !important;
+    box-shadow: 0 16px 38px rgb(0 0 0 / .22) !important;
+}
+.card:hover, article:hover { border-color: #2dd4bf88 !important; }
+.card-header { background: var(--student-surface-alt) !important; border-color: var(--student-border) !important; }
+.table { --bs-table-bg: #0c1424; --bs-table-color: var(--student-text); --bs-table-striped-bg: #111d32; --bs-table-hover-bg: #162640; border-color: var(--student-border) !important; }
+.table thead th { color: #99f6e4 !important; background: #10253a !important; text-transform: uppercase; letter-spacing: .06em; }
+.btn { border-radius: .38rem !important; font-weight: 650; }
+.btn-primary { color: #04100f !important; background: var(--student-primary) !important; border-color: var(--student-primary) !important; box-shadow: 0 0 24px rgb(45 212 191 / .25); }
+.btn-primary:hover { background: #5eead4 !important; transform: translateY(-1px); }
+.form-control, .form-select, textarea { color: var(--student-text) !important; background: #07101e !important; border: 1px solid #304665 !important; border-radius: .4rem !important; }
+.form-control:focus, .form-select:focus, textarea:focus { border-color: var(--student-primary) !important; box-shadow: 0 0 0 .22rem rgb(45 212 191 / .15) !important; }
+.pagination .page-link { color: var(--student-primary); background: var(--student-surface); border-color: var(--student-border); }
+.pagination .active > .page-link { color: #04100f; background: var(--student-primary); border-color: var(--student-primary); }
+
+/* Early lessons use standalone HTML; keep them inside the same visual language. */
+body:not(:has(.navbar)):not(:has(#app)) { padding: clamp(2rem, 8vw, 7rem); }
+body:not(:has(.navbar)):not(:has(#app)) > * { position: relative; z-index: 1; max-width: 900px; }
+body:not(:has(.navbar)):not(:has(#app)) > h1,
+body:not(:has(.navbar)):not(:has(#app)) > h2 { margin-top: 12vh; font-size: clamp(2rem, 5vw, 4.5rem); }
+body:not(:has(.navbar)):not(:has(#app)) > a { display: inline-block; margin: 1rem .6rem 0 0; padding: .6rem .9rem; border: 1px solid #2dd4bf66; border-radius: .35rem; text-decoration: none; }
+
+@media (max-width: 991.98px) {
+    .navbar, .navbar.bg-dark, .navbar.bg-white { position: sticky; inset: 0; width: 100%; min-height: auto; padding: .8rem 1rem; border-right: 0 !important; border-bottom: 1px solid #2dd4bf55 !important; }
+    .navbar::before { display: none; }
+    .navbar > .container, .navbar > .container-fluid { margin: 0; flex-direction: row; align-items: center; }
+    .navbar-brand { margin: 0 !important; padding: .55rem !important; border: 0; }
+    .navbar-collapse { align-items: stretch !important; }
+    .navbar-nav { padding-top: .6rem; }
+    #app > main, body > main.container { margin-left: 0 !important; width: 100% !important; padding: 2rem 1rem !important; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card, article, .btn, .navbar .nav-link { transition: border-color .2s ease, transform .2s ease, background-color .2s ease; }
+}
